@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# encoding: utf-8
-
 #include "Python.h"
 #include "x11.h"
 
@@ -18,9 +15,9 @@ static PyObject* x11_hash_wrapper(PyObject *self, PyObject *args) {
 	char* p = (char*)hash_data;
 	int hash_data_len = 32;
 
-    DEBUG_ASSERT(input_data != NULL);
-
+    DEBUG_ASSERT(args != NULL);
 	PyArg_ParseTuple(args, "s#" , &input_data, &input_data_len);
+	DEBUG_ASSERT(input_data != NULL);
     x11_hash(input_data, p, input_data_len);
 	PyObject* resultObject = Py_BuildValue("s#", hash_data, hash_data_len);
 	return resultObject;

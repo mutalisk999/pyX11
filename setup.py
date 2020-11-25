@@ -13,7 +13,7 @@ ext_modules = [Extension("pyX11", ["pyX11/pyX11.cpp", "pyX11/x11/aes_helper.cpp"
                                    "pyX11/x11/luffa.cpp", "pyX11/x11/shavite.cpp",
                                    "pyX11/x11/simd.cpp", "pyX11/x11/skein.cpp", "pyX11/x11/x11.cpp"],
     language="c++",
-    define_macros=[('_MSC_VER', None), ('_WIN32', None), ('MS_WIN64', None)],
+    define_macros=[],
     include_dirs=["pyX11/x11"],
     library_dirs=["pywrapper-dependence/lib64-win"],
     libraries=["python27"]
